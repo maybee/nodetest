@@ -1,5 +1,21 @@
 extends layout
 
 block content
-  h1 Martin Bentzen
-  i - en virtuel legeplads for nye webteknologier
+	h1 dk.bentzen.nodetree
+
+	#jstree_demo_div
+
+	script(type='text/javascript').
+		$(function () {
+			$('#jstree_demo_div').jstree({ 'core' : {
+				'data' : [
+					'Simple root node',
+					{
+						'text' : 'Root node 2',
+						'children' : [
+							'Child 2'
+						]
+					}
+				]
+			} }); 
+		});
