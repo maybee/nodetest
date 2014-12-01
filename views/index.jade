@@ -4,18 +4,10 @@ block content
 	h1 dk.bentzen.nodetree
 
 	#jstree_demo_div
+		ul
+			each node in nodes
+				li= node.name
 
 	script(type='text/javascript').
-		$(function () {
-			$('#jstree_demo_div').jstree({ 'core' : {
-				'data' : [
-					'Simple root node',
-					{
-						'text' : 'Root node 2',
-						'children' : [
-							'Child 2'
-						]
-					}
-				]
-			} }); 
-		});
+		$('#jstree_demo_div').jstree()
+
