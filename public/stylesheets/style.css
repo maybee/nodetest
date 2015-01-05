@@ -1,8 +1,61 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #c0c0c0;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 a {
   color: #00B7FF;
+}
+
+.rank {
+	width:150px;
+	height: 150px;
+}
+
+.rank span {
+	background-color: black;
+	padding: 5px;
+	opacity: 0.4;
+	color: white;
+	width: 100%;
+}
+
+.el-0 {
+	border: 8px solid white;
+	float: left;
+}
+
+.el-1 {
+	border: 8px solid black;
+	float: left;
+}
+
+.el-2 {
+	border: 8px solid green;
+	float: left;
+}
+
+.el-3 {
+	border: 8px solid red;
+	float: left;
+}
+
+.el-4 {
+	border: 8px solid blue;
+	float: left;
+}
+
+.el-5 {
+	border: 8px solid #996633;
+	float: left;
+}
+
+.el-6 {
+	border: 8px solid #663300;
+	float: left;
 }

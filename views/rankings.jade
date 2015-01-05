@@ -1,16 +1,19 @@
 extends layout
 
 block content
-	h1.
-		Stilling
-	
-	each player, i in rankings
-		div(class="rank" id="#{player[0]}")
-			=player[1]		 
-				
+	.center
+		h1.
+			Stilling
+		
+		each player, i in rankings
+			div(class="rank el-#{i}" id="#{player[0]}" style="background:url('#{player[0]}.jpg')")
+				span
+					=player[1] + ' points'
 
-	form#formAddRanking(name="addPlayerRanks",method="post",action="/addRanking")
-		input(type="checkbox",name="virtual", value="false") 
-		input#inputPlayerRanks(type="text", placeholder="inputPlayerRanks", name="playerRanks")
-		button#btnSubmit(type="submit") Tilføj
-		button(type="reset") Reset
+					
+		div
+			form#formAddRanking(name="addPlayerRanks",method="post",action="/addRanking")
+				input(type="checkbox",name="virtual", value="false") 
+				input#inputPlayerRanks(type="text", placeholder="inputPlayerRanks", name="playerRanks")
+				button#btnSubmit(type="submit") Tilføj
+				button(type="reset") Reset
