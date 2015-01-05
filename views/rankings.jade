@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	h1.
+		Stilling
+	
+	each player, i in rankings
+		div(class="rank" id="#{player[0]}")
+			=player[1]		 
+				
+
+	form#formAddRanking(name="addPlayerRanks",method="post",action="/addRanking")
+		input(type="checkbox",name="virtual", value="false") 
+		input#inputPlayerRanks(type="text", placeholder="inputPlayerRanks", name="playerRanks")
+		button#btnSubmit(type="submit") Tilføj
+		button(type="reset") Reset

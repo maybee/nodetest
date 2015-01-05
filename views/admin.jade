@@ -1,0 +1,13 @@
+extends adminlayout
+
+block content
+	h1 Nodetree
+
+	#jstree_demo_div
+		ul
+			each node in nodes
+				li= node.name
+
+	script(type='text/javascript').
+		$('#jstree_demo_div').jstree()
+

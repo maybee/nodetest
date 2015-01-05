@@ -1,13 +1,9 @@
 extends layout
 
 block content
-	h1 dk.bentzen.nodetree
+	h1 Nodetree
+	form#formAddRanking(name="addPlayerRanks",method="post",action="/addRanking")
+		input#inputPlayerRanks(type="text", placeholder="inputPlayerRanks", name="playerRanks")
+		button#btnSubmit(type="submit") submit
 
-	#jstree_demo_div
-		ul
-			each node in nodes
-				li= node.name
-
-	script(type='text/javascript').
-		$('#jstree_demo_div').jstree()
-
+	
