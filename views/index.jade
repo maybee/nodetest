@@ -1,9 +1,18 @@
 extends layout
 
 block content
-	h1 Nodetree
-	form#formAddRanking(name="addPlayerRanks",method="post",action="/addRanking")
-		input#inputPlayerRanks(type="text", placeholder="inputPlayerRanks", name="playerRanks")
-		button#btnSubmit(type="submit") submit
+	.center
+		h1.
+			Pokerlogen Ludoholic Livestilling
+		
+		each player, i in rankings
+			div(class="rank el-#{i}" id="#{player[0]}" style="background:url('#{player[0]}.jpg')")
+				span
+					=player[1] + ' points'
 
-	
+					
+		div
+			form#formAddRanking(name="addPlayerRanks",method="post",action="/addRanking")
+				input(type="checkbox",name="virtual", value="false") 
+				input#inputPlayerRanks(type="hidden", placeholder="inputPlayerRanks", name="playerRanks")
+				
