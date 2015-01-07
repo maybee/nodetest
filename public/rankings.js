@@ -13,4 +13,12 @@ window.addEvent('domready', function() {
 		$('inputPlayerRanks').value =$('inputPlayerRanks').value + ident;
 	}
 
+	var chart = new MilkChart.Line('chart', {width:950, height:400,lineWeight:5}).load({
+                url: '/data',
+                onLoad: function(data) {
+                    return data.data;
+                }
+            });
+
+
 });

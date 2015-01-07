@@ -98,6 +98,53 @@ router.get('/', function(req, res) {
     });
 });
 
+router.get('/data', function(req,res) {
+    var db = req.db;
+    var collection = db.get('rankings');
+    var chart = 
+    {"data": {
+        "title": "Trends og tendenser",
+        "colNames":[
+            "MB",
+            "AJ",
+            "JA",
+            "JS",
+            "AA",
+            "HB",
+            "LB"
+        ],
+        "rowNames":[],
+        "rows":[]
+    }};
+
+
+    collection.find({virtual:false},{},function(e,docs){
+        var i = 1;
+        docs.forEach(function(doc) {
+            var row = [];
+            var rankObj = doc.ranks;
+
+            row.push(7-doc.ranks.indexOf("mb"));
+            row.push(7-doc.ranks.indexOf("aj"));
+            row.push(7-doc.ranks.indexOf("ja"));
+            row.push(7-doc.ranks.indexOf("js"));
+            row.push(7-doc.ranks.indexOf("aa"));
+            row.push(7-doc.ranks.indexOf("hb"));
+            row.push(7-doc.ranks.indexOf("lb"));
+            chart.data.rows.push(row);
+            chart.data.rowNames.push("Spil" + i++);
+        });
+
+
+
+        res.json(chart);
+    });
+
+    
+    
+});
+
+
 /* GET home page. */
 router.get('/admin', function(req, res) {
     var db = req.db;
