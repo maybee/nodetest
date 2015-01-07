@@ -103,7 +103,7 @@ router.get('/data', function(req,res) {
     var collection = db.get('rankings');
     var chart = 
     {"data": {
-        "title": "Trends og tendenser",
+        "title": "Trends og tendenser - antal points pr. spil",
         "colNames":[
             "MB",
             "AJ",
